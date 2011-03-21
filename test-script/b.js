@@ -1,0 +1,1 @@
+var b = 'module b, no required';

@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<script type="text/javascript" src="core.0.2.js"></script>
+
+</head>
+
+<body>
+
+<script type="text/javascript">
+HR.module.register('test1', 'test-script/test-1.js?').require('a').require('b')
+	.register('a', 'test-script/a.js?')
+	.register('b', 'test-script/b.js?')
+	.register('test2', 'test-script/test-2.js?').require('b').require('c')
+	.register('c', 'test-script/c.js?').require('d')
+	.register('d', 'test-script/d.js?').require('a');
+	
+HR.module('test1', function () {
+	test1();
+});
+HR.module('test2', function () {
+	test2()
+})
+</script>
+</body>
+</html>
